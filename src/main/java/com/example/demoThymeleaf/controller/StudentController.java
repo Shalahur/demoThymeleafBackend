@@ -28,6 +28,11 @@ public class StudentController {
         return studentService.findAll();
     }
 
+    @GetMapping(EDIT_ROUTE)
+    public Student edit(@PathVariable(value = "id") Long id) {
+        return studentService.findById(id);
+    }
+
     @PostMapping(ADD_ROUTE)
     public Student createUser(@RequestBody Student student) {
         return studentService.save(student);
