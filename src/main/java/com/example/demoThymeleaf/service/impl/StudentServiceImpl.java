@@ -23,6 +23,9 @@ public class StudentServiceImpl implements StudentService {
         Student student = null;
         if (Objects.nonNull(studentInfo.getId())) {
             student = studentRepository.findById(studentInfo.getId()).orElse(null);
+            student.setName(studentInfo.getName());
+            student.setFatherName(studentInfo.getFatherName());
+            student.setMotherName(studentInfo.getMotherName());
         }
 
         if (Objects.isNull(student)) {
